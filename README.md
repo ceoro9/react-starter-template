@@ -10,3 +10,12 @@ Modern React project starter template, based on Webpack and Typescript
 - [ ] Redux support
 - [ ] SCSS support
 - [ ] Dockerized environment
+
+# React Codebase Source Overview
+- `/api`: fetching functions and TS types for API responses
+- `/app`: main <App> component
+- `/components`: components that are reused in multiple places
+- `/features`: components for specific domains
+- `/utils`: various utility functions
+
+[Source](https://redux-toolkit.js.org/tutorials/advanced-tutorial)

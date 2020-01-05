@@ -1,4 +1,4 @@
-import path              from 'path';
+import path                from 'path';
 import webpack             from 'webpack';
 import baseConfig          from './base.webpack.config';
 import { SRC_FOLDER_PATH } from '.';
