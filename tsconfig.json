@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
     "target": "ES2016",
+    "sourceMap": true,
     "module": "commonjs",
     "esModuleInterop": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
-    "sourceMap": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,

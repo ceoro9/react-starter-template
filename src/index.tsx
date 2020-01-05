@@ -1,14 +1,23 @@
 import React            from 'react';
 import ReactDOM         from 'react-dom';
-import { App }          from './app/App';
+import { Provider }     from 'react-redux';
 import { isHmrEnabled } from './utils/dev';
+import store            from './app/store';
 
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+const render = () => {
+  const App = require('./app/App').default;
+  ReactDOM.render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    document.getElementById('root')
+  );
+};
+
+render();
 
 if (isHmrEnabled(module)) {
-  module.hot.accept('./app/App', () => {
-    const { App: NewApp } = require('./app/App');
-    ReactDOM.render(<NewApp/>, document.getElementById('root'));
-  });
+  console.log('YES');
+  module.hot.accept('./app/App', render);
 }
