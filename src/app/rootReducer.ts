@@ -1,8 +1,7 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
-
 const rootReducer = combineReducers({
-  nice: () => ({}),
+	nice: () => ({}),
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

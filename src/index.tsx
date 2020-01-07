@@ -4,20 +4,18 @@ import { Provider }     from 'react-redux';
 import { isHmrEnabled } from './utils/dev';
 import store            from './app/store';
 
-
 const render = () => {
-  const App = require('./app/App').default;
-  ReactDOM.render(
-    <Provider store={store}>
-      <App />
-    </Provider>,
-    document.getElementById('root')
-  );
+	const App = require('./app/App').default;
+	ReactDOM.render(
+		<Provider store={store}>
+			<App />
+		</Provider>,
+		document.getElementById('root'),
+	);
 };
 
 render();
 
 if (isHmrEnabled(module)) {
-  console.log('YES');
-  module.hot.accept('./app/App', render);
+	module.hot.accept('./app/App', render);
 }

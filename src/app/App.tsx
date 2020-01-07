@@ -1,10 +1,9 @@
 import React from 'react';
 
-
 const App = () => {
-  return (
-    <div>Bello World!!!!!..h....o</div>
-  );
-}
+	return (
+		<div>Hello World!!!!!..h....o</div>
+	);
+};
 
 export default App;

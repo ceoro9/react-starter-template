@@ -5,7 +5,7 @@ Modern React project starter template, based on Webpack and Typescript
 - [x] Webpack multile environments setup and configuration
 - [x] Development server and hot module replacement
 - [x] TypeScript transpiling and type-checking
-- [ ] EsLint setup and configuration
+- [x] EsLint setup and configuration
 - [ ] Jest/Enzyme testing environment
 - [x] Redux support
 - [ ] SCSS support
