@@ -1,6 +1,11 @@
 # React Starter Template
 Modern React project starter template, based on Webpack and Typescript
 
+# Running
+```
+sudo docker-compose up --build
+```
+
 # Template constists of:
 - [x] Webpack multile environments setup and configuration
 - [x] Development server and hot module replacement
@@ -9,7 +14,7 @@ Modern React project starter template, based on Webpack and Typescript
 - [ ] Jest/Enzyme testing environment
 - [x] Redux support
 - [ ] SCSS support
-- [ ] Dockerized environment
+- [x] Dockerized environment
 
 # React Codebase Source Overview
 - `/api`: fetching functions and TS types for API responses

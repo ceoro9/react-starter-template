@@ -1,0 +1,35 @@
+version: '3.1'
+
+services:
+  ui-admin-panel:
+    container_name: ui-admin-panel-instance
+    build: .
+    environment: 
+      - NODE_ENV=development
+      - UI_ADMIN_PANEL_DEV_SERVER_PORT=9000
+    ports:
+      - "9000:9000"
+    volumes:
+      - .:/usr/src/app/:rw
+
+    # If node_modules/ does not exist in the current directory
+    # of host machine, we copy pre-install(during docker build)
+    # node_modules/ folder from the container to the current directory
+    # of the host machine.
+    # ****************************************************************
+    # BEFORE YOU RUN this file for the first time, make sure you remove
+    # node_modules/ folder on your host machine, othervise the machine
+    # dependent node_modules/ folder will be mounted to the
+    # container, so in that case there will be no point of using
+    # docker containers for shipping re-usable software.
+    # ****************************************************************
+    command: >
+      sh -c '
+        if test -d node_modules; \
+        then \
+          echo node_modules_exists; \
+        else \
+          cp -a /tmp/node_modules /usr/src/app; \
+        fi && \
+          npm install && \
+          dumb-init npm start'
