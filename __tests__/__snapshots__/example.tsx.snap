@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppComponent should render 1`] = `
+<Fragment>
+  <div
+    className="app"
+  >
+    Hello World!!!!
+  </div>
+  <div
+    className="nice"
+  >
+    Nice
+  </div>
+  <div
+    className="golo"
+  >
+    Golo
+  </div>
+</Fragment>
+`;
