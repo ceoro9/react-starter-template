@@ -11,7 +11,7 @@ sudo docker-compose up --build
 - [x] Development server and hot module replacement
 - [x] TypeScript transpiling and type-checking
 - [x] EsLint setup and configuration
-- [ ] Jest/Enzyme testing environment
+- [x] Jest/Enzyme testing environment
 - [x] Redux support
 - [x] Support of SCSS with typings
 - [x] Dockerized environment
