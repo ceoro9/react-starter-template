@@ -1,7 +1,5 @@
 {
-  "include": [
-    "**/src/**/*.{ts,tsx,d.ts}"
-  ],
+  "compileOnSave": true,
   "compilerOptions": {
     "target": "ES2016",
     "sourceMap": true,
@@ -15,12 +13,15 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "typeRoots": [
-      "node_modules/@types",
-      "./src/index.d.ts"
+      "node_modules/@types/",
+      "./src/@types/"
     ]
   },
-
-  "exclude": [
-    "node_modules"
-  ]
+  "include": [
+    "**/*"
+  ],
+  "exclude": [],
+  "paths": {
+    "*" : ["./src/@types/*"]
+  }
 }

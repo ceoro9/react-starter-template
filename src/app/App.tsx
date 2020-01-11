@@ -6,6 +6,7 @@ const App = () => {
 		<React.Fragment>
 			<div className={styles.app}>Hello World!!!!</div>
 			<div className={styles.nice}>Nice</div>
+      <div className={styles.golo}>Golo</div>
 		</React.Fragment>
 	);
 };

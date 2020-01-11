@@ -34,16 +34,13 @@ const config: webpack.Configuration = {
         exclude: /node_modules/,
         use: [
           'style-loader',
+          '@teamsupercell/typings-for-css-modules-loader',
           {
             loader: 'css-loader',
             options: {
               modules: true,
               sourceMap: !isProductionEnv()
             }
-          },
-          {
-            // supports latest css-loader version
-            loader: '@teamsupercell/typings-for-css-modules-loader'
           },
           {
             loader: 'sass-loader',
