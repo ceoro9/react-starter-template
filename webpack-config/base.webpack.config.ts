@@ -6,7 +6,8 @@ import {
 	SRC_FOLDER_PATH,
 	DIST_FOLDER_PATH,
 	ROOT_PROJECT_PATH,
-	NODE_MODULES_PATH,
+  NODE_MODULES_PATH,
+  isProductionEnv
 } from '.';
 
 const config: webpack.Configuration = {
@@ -24,7 +25,34 @@ const config: webpack.Configuration = {
 				test: /\.tsx?$/,
 				exclude: /node_modules/,
 				loader: 'eslint-loader',
-			},
+      },
+      {
+        test: /\.s?css$/,
+        include: [
+		    	SRC_FOLDER_PATH,
+				],
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              sourceMap: !isProductionEnv()
+            }
+          },
+          {
+            // supports latest css-loader version
+            loader: '@teamsupercell/typings-for-css-modules-loader'
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: !isProductionEnv()
+            }
+          }
+        ]
+      },
 			{
 				test: /\.tsx?$/,
 				include: [
@@ -66,13 +94,21 @@ const config: webpack.Configuration = {
 	    NODE_MODULES_PATH,
 	    SRC_FOLDER_PATH,
 		],
-		extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+		extensions: [
+      '.js',
+      '.jsx',
+      '.ts',
+      '.tsx',
+      '.json',
+      '.css',
+      '.scss'
+    ],
 	},
 
 	performance: {
 		hints: 'warning',
 		maxEntrypointSize: 2000000, // 2MB
-		maxAssetSize: 5000000, // 5MB
+		maxAssetSize: 5000000,      // 5MB
 	},
 
 	plugins: [
@@ -84,7 +120,11 @@ const config: webpack.Configuration = {
 		new ForkTsCheckerWebpackPlugin({
 			useTypescriptIncrementalApi: true,
 			checkSyntacticErrors: true,
-		}),
+    }),
+    // ignore typing for css modules
+    new webpack.WatchIgnorePlugin([
+      /s?css\.d\.ts$/
+    ])
 	],
 };
 

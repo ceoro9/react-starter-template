@@ -13,7 +13,7 @@ sudo docker-compose up --build
 - [x] EsLint setup and configuration
 - [ ] Jest/Enzyme testing environment
 - [x] Redux support
-- [ ] SCSS support
+- [ ] Support of SCSS with typings(TODO: add typings generation when HMR)
 - [x] Dockerized environment
 
 # React Codebase Source Overview

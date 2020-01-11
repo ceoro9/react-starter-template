@@ -1,8 +1,12 @@
-import React from 'react';
+import React  from 'react';
+import styles from './app.scss';
 
 const App = () => {
 	return (
-		<div>Hello World!</div>
+		<React.Fragment>
+			<div className={styles.app}>Hello World!!!!</div>
+			<div className={styles.nice}>Nice</div>
+		</React.Fragment>
 	);
 };
 
